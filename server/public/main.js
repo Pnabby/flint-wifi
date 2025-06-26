@@ -7,15 +7,16 @@ const plans = {
 
 let selectedPlan = null;
 
-function selectPlan(planType) {
+// ✅ Attach functions to window so HTML onclick="..." can access them
+window.selectPlan = function(planType) {
   selectedPlan = plans[planType];
   document.getElementById('emailModal').style.display = 'flex';
-}
+};
 
-function closeModal() {
+window.closeModal = function() {
   document.getElementById('emailModal').style.display = 'none';
-}
+};
 
-function closeCredentialsModal() {
+window.closeCredentialsModal = function() {
   document.getElementById('credentialsModal').style.display = 'none';
-}
+};
