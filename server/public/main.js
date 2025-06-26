@@ -1,13 +1,12 @@
-// Only frontend logic (no API keys)
+// main.js
 const plans = {
-  daily: { amount: 4, name: "daily" },
-  weekly: { amount: 25, name: "weekly" },
-  monthly: { amount: 100, name: "monthly" }
+  daily: { name: "daily", amount: 4 },
+  weekly: { name: "weekly", amount: 25 },
+  monthly: { name: "monthly", amount: 100 }
 };
 
 let selectedPlan = null;
 
-// ✅ Attach functions to window so HTML onclick="..." can access them
 window.selectPlan = function(planType) {
   selectedPlan = plans[planType];
   document.getElementById('emailModal').style.display = 'flex';
